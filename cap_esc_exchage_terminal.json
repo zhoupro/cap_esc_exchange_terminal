@@ -1,0 +1,91 @@
+{
+  "title": "Capslock Esc Exchage",
+  "author": "prozhou",
+  "homepage": "https://github.com/zhoupro/cap_esc_exchange_terminal",
+  "hostpage": "https://github.com/zhoupro/cap_esc_exchange_terminal",
+  "manual": "https://github.com/zhoupro/cap_esc_exchange_terminal",
+  "import_url": "karabiner://karabiner/assets/complex_modifications/import?url=",
+  "rules": [
+    {
+      "description": "CapsLock to Escape Only in Terminal",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "escape",
+              "modifiers": {
+                "optional": [
+                "any"
+                ]
+              } 
+            }
+          ],
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "^co\\.zeit\\.hyperterm$",
+                "^co\\.zeit\\.hyper$",
+                "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+    ,
+{
+      "description": " Escape to Cap Only in Terminal",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "escape",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "caps_lock",
+              "modifiers": {
+                "optional": [
+                "any"
+                ]
+              } 
+            }
+          ],
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "^co\\.zeit\\.hyperterm$",
+                "^co\\.zeit\\.hyper$",
+                "^io\\.alacritty$",
+                "^net\\.kovidgoyal\\.kitty$"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+

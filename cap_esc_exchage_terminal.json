@@ -4,7 +4,7 @@
   "homepage": "https://github.com/zhoupro/cap_esc_exchange_terminal",
   "hostpage": "https://github.com/zhoupro/cap_esc_exchange_terminal",
   "manual": "https://github.com/zhoupro/cap_esc_exchange_terminal",
-  "import_url": "karabiner://karabiner/assets/complex_modifications/import?url=",
+  "import_url": "karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/zhoupro/cap_esc_exchange_terminal/master/cap_esc_exchage_terminal.json",
   "rules": [
     {
       "description": "CapsLock to Escape Only in Terminal",

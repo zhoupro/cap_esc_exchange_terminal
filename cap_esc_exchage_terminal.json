@@ -1,91 +1,73 @@
 {
-  "title": "Capslock Esc Exchage",
-  "author": "prozhou",
-  "homepage": "https://github.com/zhoupro/cap_esc_exchange_terminal",
-  "hostpage": "https://github.com/zhoupro/cap_esc_exchange_terminal",
-  "manual": "https://github.com/zhoupro/cap_esc_exchange_terminal",
-  "import_url": "karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/zhoupro/cap_esc_exchange_terminal/master/cap_esc_exchage_terminal.json",
-  "rules": [
-    {
-      "description": "CapsLock to Escape Only in Terminal",
-      "manipulators": [
+    "title": "Capslock Esc Exchage",
+    "author": "prozhou",
+    "homepage": "https://github.com/zhoupro/cap_esc_exchange_terminal",
+    "hostpage": "https://github.com/zhoupro/cap_esc_exchange_terminal",
+    "manual": "https://github.com/zhoupro/cap_esc_exchange_terminal",
+    "import_url": "karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/zhoupro/cap_esc_exchange_terminal/master/cap_esc_exchage_terminal.json",
+    "rules": [
         {
-          "from": {
-            "key_code": "caps_lock",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "escape",
-              "modifiers": {
-                "optional": [
-                "any"
-                ]
-              } 
-            }
-          ],
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^com\\.apple\\.Terminal$",
-                "^com\\.googlecode\\.iterm2$",
-                "^co\\.zeit\\.hyperterm$",
-                "^co\\.zeit\\.hyper$",
-                "^io\\.alacritty$",
-                "^net\\.kovidgoyal\\.kitty$"
-              ]
-            }
-          ]
+            "description": "remap capsLock to (contrl+option+shift) in combine mode, otherwise to escape",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "caps_lock",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_command",
+                            "modifiers": [
+                                "left_control",
+                                "left_option"
+                            ]
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "escape",
+                            "modifiers": {
+                                "optional": [
+                                    "any"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    }
-    ,
-{
-      "description": " Escape to Cap Only in Terminal",
-      "manipulators": [
+        ,
+
         {
-          "from": {
-            "key_code": "escape",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "caps_lock",
-              "modifiers": {
-                "optional": [
-                "any"
-                ]
-              } 
-            }
-          ],
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^com\\.apple\\.Terminal$",
-                "^com\\.googlecode\\.iterm2$",
-                "^co\\.zeit\\.hyperterm$",
-                "^co\\.zeit\\.hyper$",
-                "^io\\.alacritty$",
-                "^net\\.kovidgoyal\\.kitty$"
-              ]
-            }
-          ]
+            "description": " Escape to Cap",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "escape",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "caps_lock",
+                            "modifiers": {
+                                "optional": [
+                                    "any"
+                                ]
+                            } 
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
-
-
